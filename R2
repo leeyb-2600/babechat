@@ -7,11 +7,11 @@ function toggleCharacterSelection() {
 
 // Displaying images
 const images = {
-    복장: 'path/to/image1.jpg',
-    방귀: 'path/to/image2.jpg',
-    맑은날씨: 'path/to/image3.jpg',
-    변태: 'path/to/image4.jpg',
-    배경: 'path/to/image5.jpg'
+    복장: 'https://itimg.kr/3934/PJ/BF1.webp',  // ← 여기에 링크 입력
+    방귀: 'https://itimg.kr/3934/O2/FT.webp',
+    맑은날씨: 'https://itimg.kr/3934/WX/WX.webp',
+    변태: 'https://itimg.kr/3934/EVNT/OFF.webp',
+    배경: 'https://itimg.kr/3934/WH/ST.webp'
 };
 
 // Function to render images

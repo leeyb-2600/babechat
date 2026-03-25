@@ -1,17 +1,27 @@
-</style>
-</head>
-<body>
+// 캔버스 생성
+const canvas = createCanvas(500, 500);
+const ctx = canvas.getContext("2d");
 
-<div class="image-container">
-  <!-- 배경 이미지 (가장 아래) -->
-  <img src="https://itimg.kr/3934/WH/ST.webp" class="stacked-image" alt="Background">
-  
-  <!-- 겹칠 이미지 (중간) -->
-  <img src="https://itimg.kr/3934/O2/FT.webp" class="stacked-image" alt="Layer1">
-  
-  <!-- 가장 위에 올 이미지 -->
-  <img src="https://itimg.kr/3934/PJ/BF1.webp" class="stacked-image" alt="Layer2">
-</div>
+// 이미지 레이어 순서대로 합성
+const layers = [
+  "https://itimg.kr/3934/WH/ST.webp",   // 배경 (맨 아래)
+  "https://itimg.kr/3934/WX/WX.webp",   // 날씨
+  "https://itimg.kr/3934/EVNT/OFF.webp", // 변태
+  "https://itimg.kr/3934/O2/FT.webp",   // 방귀
+  "https://itimg.kr/3934/PJ/BF1.webp",  // 캐릭터 (맨 위)
+];
 
-</body>
-</html>
+for (const layerUrl of layers) {
+  try {
+    const img = await loadImage(layerUrl);
+    ctx.drawImage(img, 0, 0, 500, 500);
+  } catch (e) {
+    // 이미지 없으면 스킵
+  }
+}
+
+// 결과 이미지 반환
+const buffer = canvas.toBuffer("image/png");
+return new Response(buffer, {
+  headers: { "Content-Type": "image/png" }
+});

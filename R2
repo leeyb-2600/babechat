@@ -7,7 +7,7 @@ function toggleCharacterSelection() {
 
 // Displaying images
 const images = {
-    복장: 'https://itimg.kr/3934/PJ/BF1.webp',  // ← 여기에 링크 입력
+    복장: 'https://itimg.kr/3934/PJ/BF1.webp',
     방귀: 'https://itimg.kr/3934/O2/FT.webp',
     맑은날씨: 'https://itimg.kr/3934/WX/WX.webp',
     변태: 'https://itimg.kr/3934/EVNT/OFF.webp',
